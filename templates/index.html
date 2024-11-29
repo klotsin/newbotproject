@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="/static/styles.css">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebApp Interface</title>
+    <title>Тамагочи</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>Welcome to WebApp!</h1>
-    <form action="/submit" method="post">
-        <label for="username">Enter your name:</label>
-        <input type="text" id="username" name="username" required>
-        <button type="submit">Submit</button>
+    <h1>Выберите питомца</h1>
+    <form method="POST">
+        <label for="name">Имя питомца:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="pet_type">Тип питомца:</label>
+        <select id="pet_type" name="pet_type">
+            <option value="Кошка">Кошка</option>
+            <option value="Собака">Собака</option>
+            <option value="Кролик">Кролик</option>
+            <option value="Дракончик">Дракончик</option>
+            <option value="Панда">Панда</option>
+            <option value="Лисенок">Лисенок</option>
+        </select>
+        <button type="submit">Создать питомца</button>
     </form>
+    <div id="status"></div>
+    <button onclick="performAction('feed')">Кормить</button>
+    <button onclick="performAction('play')">Играть</button>
+    <button onclick="performAction('clean')">Убирать</button>
+
+    <script src="/static/script.js"></script>
 </body>
 </html>
